@@ -295,6 +295,16 @@ export default function Index() {
             </div>
           </TabsContent>
 
+          <TabsContent value="quality" className="space-y-6">
+            <DataOrigin database={db} />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <DataQuality database={db} />
+              <QualityAlerts database={db} />
+            </div>
+            <AnomalyDetection database={db} />
+            <MappingCorrection database={db} onDataChanged={handleDataChanged} />
+          </TabsContent>
+
           <TabsContent value="data" className="space-y-6">
             <DataTable database={db} onDataChanged={handleDataChanged} />
           </TabsContent>
