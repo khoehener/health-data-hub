@@ -9,6 +9,11 @@ import { MedicationChart } from "@/components/dashboard/MedicationChart";
 import { AdminStatusChart } from "@/components/dashboard/AdminStatusChart";
 import { PredictiveInsights } from "@/components/dashboard/PredictiveInsights";
 import { DataTable } from "@/components/dashboard/DataTable";
+import { DataOrigin } from "@/components/dashboard/DataOrigin";
+import { DataQuality } from "@/components/dashboard/DataQuality";
+import { AnomalyDetection } from "@/components/dashboard/AnomalyDetection";
+import { QualityAlerts } from "@/components/dashboard/QualityAlerts";
+import { MappingCorrection } from "@/components/dashboard/MappingCorrection";
 import { Activity, Loader2 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
