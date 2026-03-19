@@ -9,6 +9,11 @@ import { MedicationChart } from "@/components/dashboard/MedicationChart";
 import { AdminStatusChart } from "@/components/dashboard/AdminStatusChart";
 import { PredictiveInsights } from "@/components/dashboard/PredictiveInsights";
 import { DataTable } from "@/components/dashboard/DataTable";
+import { DataOrigin } from "@/components/dashboard/DataOrigin";
+import { DataQuality } from "@/components/dashboard/DataQuality";
+import { AnomalyDetection } from "@/components/dashboard/AnomalyDetection";
+import { QualityAlerts } from "@/components/dashboard/QualityAlerts";
+import { MappingCorrection } from "@/components/dashboard/MappingCorrection";
 import { Activity, Loader2 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -268,6 +273,7 @@ export default function Index() {
             <TabsTrigger value="overview">Übersicht</TabsTrigger>
             <TabsTrigger value="risk">Risikoanalyse</TabsTrigger>
             <TabsTrigger value="medication">Medikation</TabsTrigger>
+            <TabsTrigger value="quality">Datenqualität</TabsTrigger>
             <TabsTrigger value="data">Daten</TabsTrigger>
           </TabsList>
 
@@ -287,6 +293,16 @@ export default function Index() {
               <MedicationChart data={data.topMedications} />
               <AdminStatusChart data={data.adminStatus} />
             </div>
+          </TabsContent>
+
+          <TabsContent value="quality" className="space-y-6">
+            <DataOrigin database={db} />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <DataQuality database={db} />
+              <QualityAlerts database={db} />
+            </div>
+            <AnomalyDetection database={db} />
+            <MappingCorrection database={db} onDataChanged={handleDataChanged} />
           </TabsContent>
 
           <TabsContent value="data" className="space-y-6">
