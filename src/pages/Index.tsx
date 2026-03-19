@@ -273,6 +273,7 @@ export default function Index() {
             <TabsTrigger value="overview">Übersicht</TabsTrigger>
             <TabsTrigger value="risk">Risikoanalyse</TabsTrigger>
             <TabsTrigger value="medication">Medikation</TabsTrigger>
+            <TabsTrigger value="quality">Datenqualität</TabsTrigger>
             <TabsTrigger value="data">Daten</TabsTrigger>
           </TabsList>
 
